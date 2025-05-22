@@ -1,0 +1,42 @@
+<h2>Usuarios</h2>
+
+<div class="users-container">
+  <form [formGroup]="user" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Nombre: </label>
+      <input id="name" type="text" formControlName="name" placeholder="Ingresa nombre"/>
+    </div>
+    <div>
+      <label for="surname">Apellido: </label>
+      <input id="surname" type="text" formControlName="surname" placeholder="Ingresa apellido"/>
+    </div>
+    <div>
+      <label for="phone">Teléfono: </label>
+      <input id="phone" type="phone" formControlName="phone" placeholder="Ingresa numero de teléfono"/>
+    </div>
+    <div>
+      <label for="birth">Fecha de nacimiento: </label>
+      <input id="birth" type="date" formControlName="birth" min="1900-01-01" max="2020-12-31"/>
+    </div>
+    <button type="submit" [disabled]="user.invalid">Agregar</button>
+  </form>
+  
+  <table border="1"><caption>Lista de usuarios</caption>
+    <thead>
+      <tr>
+        <td><strong>Nombre</strong></td>
+        <td><strong>Apellido</strong></td>
+        <td><strong>Teléfono</strong></td>
+        <td><strong>Fecha de nacimiento</strong></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.name }}</td>
+        <td>{{ user.surname }}</td>
+        <td>{{ user.phone }}</td>
+        <td>{{ user.birth }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

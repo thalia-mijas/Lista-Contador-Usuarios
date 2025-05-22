@@ -1,0 +1,13 @@
+<h2>Lista</h2>
+
+<div class="container">
+  <input type="text" [formControl]="item" placeholder="Ingresa tu item" required="">
+  <button (click)="aggItem()" [disabled]="item.invalid">Agregar</button>
+</div>
+
+<div>
+  <div *ngFor="let item of items" class="container">
+    <div>{{ item }}</div>
+    <button (click)="delItem(item)">❌</button>
+  </div>
+</div>
