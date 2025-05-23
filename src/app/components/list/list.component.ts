@@ -21,7 +21,6 @@ export class ListComponent {
     if (newItem != null) {
       if (this.items.indexOf(newItem) >= 0) {
         alert('Item ya existe.');
-        this.item.reset();
         return;
       }
       this.items.push(newItem);
