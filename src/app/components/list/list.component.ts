@@ -20,7 +20,8 @@ export class ListComponent {
 
     if (newItem != null) {
       if (this.items.indexOf(newItem) >= 0) {
-        console.warn('Item ya existe.');
+        alert('Item ya existe.');
+        this.item.reset();
         return;
       }
       this.items.push(newItem);
